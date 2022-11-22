@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" th:href="@{/images/iconobom.png}">
+    <link rel="stylesheet" th:href="@{/css/formularioCliente.css}">
+    <title>Categoria | Dinamita | Formulario</title>
+</head>
+<body>
+    <header th:insert="fragmentos/menuPrincipal :: menu-principal"></header>
+    <h1>FORMULARIO CATEGORIA</h1>
+    <div class="formulario">
+    <form method="POST" th:action="@{/categoria/guardar}" th:object="${categoria}">
+            <p>
+            <input type="hidden" th:field="*{claveCategoria}"> 
+            
+            <label for="nombreCategoria">Nombre de la Categoria: </label>
+            <input required autofocus th:field="*{nombreCategoria}" name="nombreCategoria" id="nombreCategoria" type="text" placeholder="Ingresa el nombre de la Categoria: "><br>
+        </p>
+        <p> <input  class="guardarBtn" type="submit" value="Guardar"></p>
+    </form>
+    </div>
+</body>
+</html>

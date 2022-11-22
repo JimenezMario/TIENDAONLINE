@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" th:href="@{/images/iconobom.png}">
+    <link rel="stylesheet" th:href="@{/css/ListaEntregas.css}">
+    <title>Entregas | Dinamita | Lista Entregas</title>
+</head>
+<body>
+    <header th:insert="fragmentos/menuPrincipal :: menu-principal"></header>
+
+    <h1>Lista de Entregas</h1>
+    <p>
+        <a th:href="@{/entregas/crear}"><button class="nuevo">Nuevo</button></a>
+    </p>
+
+    <table>
+        <thead> 
+            <tr>
+                <th>Clave entrega</th>
+                <th>Detalle entrega</th>
+                <th>Fecha entrega</th>
+                <th>Folio compra</th>
+                <th>Operaciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="entrega : ${entregas}">
+                <td th:text="${entrega.claveEntrega}"></td>
+                <td th:text="${entrega.detalleEntrega}"></td>
+                <td th:text="${#dates.format(entrega.fechaEntrega, 'yyyy-MMM-dd')}"></td>
+                <td th:text="${entrega.folioCompra.folioCompra}"></td>
+                <td>
+                    <a th:href="@{/entregas/actualizar (claveEntrega=${entrega.claveEntrega})}"><button class="actualizar">Actualizar</button></a>
+                    <a th:href="@{/entregas/eliminar (claveEntrega=${entrega.claveEntrega})}"><button onclick="confirm('Estas seguro que deseas eliminar este cliente?')" class="eliminar">Eliminar</button></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

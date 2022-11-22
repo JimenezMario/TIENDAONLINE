@@ -1,0 +1,58 @@
+
+body{
+    background-image: url(../images/fondotienda.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: unset;
+    background-attachment: fixed;
+}
+header{
+margin:-8px;
+    background-color: rgb(90, 10, 10);
+    height: 100px;
+    width: 98.69vw;
+ 
+}
+header > img{
+    margin-left: 25px;
+    width: 60px;
+    display: inline-block;
+    margin-top: 20px;
+    float: left;
+}
+
+header > a{
+    margin-top: none;
+    color: #ffff;
+    margin-left: 20px;
+    display: inline-block;
+    padding-top: 40px;
+    float: left;
+    text-decoration: none;
+}
+h1{
+    text-align: center;
+    color: #ffff;
+}
+table{
+    margin: 0 auto;
+}
+table, th, td{
+    color: white;
+    border: 1px solid white;
+}
+p{
+    text-align: center;
+}
+.actualizar{
+    background-color: rgb(49, 69, 255);
+    color: #ffff;
+}
+.eliminar{
+    background-color: red;
+    color: white;
+}
+.nuevo{
+    background-color: white;
+    color:black;
+}

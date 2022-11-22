@@ -1,0 +1,85 @@
+
+
+body{
+    background-image: url(../images/fondotienda.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: unset;
+    background-attachment: fixed;
+}
+header{
+margin:-8px;
+    background-color: rgb(90, 10, 10);
+    height: 100px;
+    width: 98.69vw;
+ 
+}
+header > img{
+    margin-left: 25px;
+    width: 60px;
+    display: inline-block;
+    margin-top: 20px;
+    float: left;
+}
+
+header > a{
+    margin-top: none;
+    color: #ffff;
+    margin-left: 20px;
+    display: inline-block;
+    padding-top: 40px;
+    float: left;
+    text-decoration: none;
+}
+.seccion-articulo{
+    background-color: #ffff;
+    width: 40%;
+    height: max-content;
+    z-index: 10;
+    opacity: 50%;
+    margin: 0 auto;
+    margin-top: 50px;
+    border-radius: 50px;
+    
+}
+.seccion-articulo img{
+    width: 250px;
+    opacity:100%;
+    display: inline-block   ;
+    float: left;
+    margin-top: 120px;
+}
+
+
+.info-articulo{
+    display: inline-block;
+}
+.info-articulo p{
+    display: inline;
+}
+
+.actualizar{
+    background-color: rgb(49, 69, 255);
+    color: #ffff;
+}
+.eliminar{
+    background-color: red;
+    color: white;
+}
+
+.btn-comprar{
+    position: absolute;
+    margin-top: 80px;
+    margin-left: 200px;
+}
+.btn-comprar button{
+    width: 120px;
+    height: 50px;
+    border-radius: 60px;
+    background-color:rgb(248, 248, 166);
+}
+.btn-comprar button:hover{
+    transform: scale(1.5);
+    transition: all .5s;
+}
+

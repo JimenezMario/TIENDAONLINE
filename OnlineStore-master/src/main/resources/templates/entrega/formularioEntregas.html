@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/formularioEntregas.css}">
+    <link rel="shortcut icon" th:href="@{/images/iconobom.png}">
+    <title>Entregas | Dinamita | Formulario</title>
+</head>
+<body>
+    <header th:insert="fragmentos/menuPrincipal :: menu-principal"></header>
+    <h1>FORMULARIO ENTREGAS</h1>
+    <div class="formulario" >
+    <form method="POST" th:action="@{/entregas/guardar}" th:object="${entrega}">
+    <input type=hidden th:field="*{claveEntrega}">
+
+        <p>
+            <label>Detalle entrega: </label>
+            <textarea name="detalleEntrega" id="detalleEntrega" th:field="*{detalleEntrega}"
+             cols="30" rows="10" placeholder="Ingresa el detalle de la entrega: "></textarea><br>
+        </p>
+        <p>
+            <label>Fecha entrega: </label>
+            <input name="fechaEntrega" id="fechaEntrega" th:field="*{fechaEntrega}" type="date">
+        </p>
+        <p>
+            <label>Folio Compra: </label>
+            <input name="folioCompra" id="folioCompra" th:field="*{folioCompra}" type="text" placeholder="Ingresa el folio del pedido: "><br>
+        </p>
+              
+        <p> <input class="guardarBtn" type="submit" value="Guardar"></p>
+       
+    </form>
+    </div>
+</body>
+</html>

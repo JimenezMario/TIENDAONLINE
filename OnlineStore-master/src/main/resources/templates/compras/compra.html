@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" th:href="@{/images/iconobom.png}">
+<link rel="stylesheet" th:href="@{/css/compra.css}">
+<title>Compra | Dinamita | Formulario</title>
+</head>
+<body>
+	<header th:insert="fragmentos/menuPrincipal :: menu-principal"></header>
+	<h1>FORMULARIO COMPRA</h1>
+	<div class="formulario">
+		<form method="POST" th:action="@{/compras/comprar}" th:object="${compra}">
+		<input type="hidden" th:field="*{folioCompra}">
+			<p>
+				<label>Clave producto: </label> <input type="text"
+				name="claveProducto" id="claveProducto"
+				th:field="*{codigoProducto.codigoProducto}"
+					placeholder="Ingresa la clave del producto: "><br>
+			</p>
+			<p>
+				<label>Clave cliente: </label> <input type="text"
+				name="claveCliente" id="claveCliente"
+				th:field="*{claveCliente.claveCliente}"
+					placeholder="Ingresa su clave de cliente "><br>
+			</p>
+			<p>
+				<label>Cantidad: </label> <input type="number"
+				name="cantidad" id="cantidad"
+				th:field="*{cantidad}"
+					placeholder="Ingresa la cantidad a comprar: ">
+			</p>
+			<p>
+				<label>Fecha compra: </label> <input type="date"
+				name="fechaCompra" id="fechaCompra"
+				th:field="*{fechaCompra}"><br>
+				
+			</p>
+			<p>
+				<label>Hora compra: : </label> <input type="text"
+				name="horaCompra" id="horaCompra"
+				th:field="*{horaCompra}"
+					placeholder="Ingresa la hora de la compra: ">
+					<small>hh:mm (pm/am)</small>
+			</p>
+			<p>
+				<input class="guardarBtn" role="button" onclick="return alert('Producto comprado con exito')" type="submit" value="Comprar">
+			</p>
+			</form>
+			</div>
+</body>
+</html>

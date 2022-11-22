@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" th:href="@{/images/iconobom.png}">
+    <link rel="stylesheet" th:href="@{/css/formularioCliente.css}">
+    <title>Cliente | Fromulario | Dinamita</title>
+</head>
+<body>
+    <header th:insert="fragmentos/menuPrincipal :: menu-principal"></header>
+    <h1>FORMULARIO CLIENTE</h1>
+    <div class="formulario">
+    <form method="POST" th:action="@{/cliente/guardar}" th:object="${cliente}">
+    <input type="hidden" th:field="*{claveCliente}">
+        <p>
+            <label>Nombre del cliente: </label>
+            <input th:field="*{nombre}" name="nombre" id="nombre" type="text" placeholder="Ingresa el nombre del cliente: "><br>
+        </p>
+        <p>
+            <label>Apellido Paterno: </label>
+            <input th:field="*{apellidoPaterno}" name="apellidoPaterno" id="apellidoPaterno" type="text" placeholder="Ingresa el apellido paterno: ">
+        </p>
+        <p>
+            <label>Apellido Materno: </label>
+            
+            <input th:field="*{apellidoMaterno}" name="apellidoMaterno" id="apellidoMaterno" type="text" placeholder="Ingresa el apellido materno: "><br>
+        </p>
+        <p>
+            <label>Calle numero del cliente: </label>
+            <input th:field="*{calleNumero}" name="calleNumero" id="calleNumero" type="text" placeholder="Ingresa la calle numero del cliente: ">
+        </p>
+        <p>
+            <label>Colonia del cliente: </label>
+            <input th:field="*{colonia}" name="colonia" id="colonia" type="text" placeholder="Ingresa la colonia del cliente    : "><br>
+        </p>
+        <p>
+            <label>Entidad del cliente: </label>
+            <input th:field="*{entidad}" name="entidad" id="entidad" type="text" placeholder="Ingresa la entidad del cliente: ">
+        </p>
+        <p>
+            <label>C.P: </label>
+            <input th:field="*{codigoPostal}" name="codigoPostal" id="codigoPostal" type="text" placeholder="Ingresa el c.p del cliente: ">
+        </p>
+        <p>
+            <label>Telefono cliente: </label>
+            <input th:field="*{telefono}" name="telefono" id="telefono" type="text" placeholder="Ingresa el telefono del cliente: ">
+        </p>
+       
+        <p> <input class="guardarBtn" type="submit" value="Guardar"></p>
+       
+    </form>
+    </div>
+</body>
+</html>

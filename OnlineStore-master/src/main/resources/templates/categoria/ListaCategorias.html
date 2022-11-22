@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/Cliente.css}">
+    <link rel="shortcut icon" th:href="@{/images/iconobom.png}">
+    <title>Categorias | Lista Categorias | Dinamita</title>
+</head>
+<body>
+    <header th:insert="fragmentos/menuPrincipal :: menu-principal"></header>
+    <h1>Lista de Categoria</h1>
+    <p>
+        <a th:href="@{/categoria/crear}"><button class="nuevo">Nuevo</button></a>
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Clave Categoria</th>
+                <th>Nombre Categoria</th>
+                <th>Operaciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="categoria : ${categorias}">
+                <td th:text="${categoria.claveCategoria}"></td>
+                <td th:text="${categoria.nombreCategoria}"></td>
+                <td>
+                    <a th:href="@{/categoria/actualizar (claveCategoria=${categoria.claveCategoria})}"><button class="actualizar">Actualizar</button></a>
+                    <a th:href="@{/categoria/eliminar (claveCategoria=${categoria.claveCategoria})}"><button onclick="confirm('Estas seguro que deseas eliminar esta Categoria?')" class="eliminar">Eliminar</button></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+</body>
+</html>

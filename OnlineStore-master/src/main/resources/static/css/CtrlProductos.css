@@ -1,0 +1,70 @@
+body{
+    background-image: url(../images/fondotienda.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: unset;
+    background-attachment: fixed;
+}
+header{
+    margin:-8px;
+        background-color: rgb(90, 10, 10);
+        height: 100px;
+        width: 98.69vw;
+     
+    }
+    header > img{
+        margin-left: 25px;
+        width: 60px;
+        display: inline-block;
+        margin-top: 20px;
+        float: left;
+    }
+    
+    header > a{
+        margin-top: none;
+        color: #ffff;
+        margin-left: 20px;
+        display: inline-block;
+        padding-top: 40px;
+        float: left;
+        text-decoration: none;
+    }
+    .formulario{
+        margin: 0 auto;
+        width: 60%;
+
+    }
+    h1{
+        text-align: center;
+        color: #ffff;
+    }
+    label{
+        color:#ffff;
+        font-family: Arial, Helvetica, sans-serif
+    }
+    input{
+        width: 200px;
+        height: 25px;
+        border-radius: 10px;
+        background-color: transparent;
+        color: #ffff;
+    }
+    textarea{
+        border-radius: 10px;
+        background-color: transparent;
+        color: #ffff;
+    }
+    select{
+        width: 200px;
+        height: 25px;
+        border-radius: 10px;
+        background-color: transparent;
+        color: #ffff;
+    }
+    p{
+        text-align: center;
+    }
+    .guardarBtn{
+        background-color: white;
+        color: black;
+    }

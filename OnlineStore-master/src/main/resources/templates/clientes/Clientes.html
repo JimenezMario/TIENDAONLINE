@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/Cliente.css}">
+    <link rel="shortcut icon" th:href="@{/images/iconobom.png}">
+    <title>Clientes | Dinamita | Lista Clientes</title>
+</head>
+
+<body>
+    <header th:insert="fragmentos/menuPrincipal :: menu-principal"></header>
+    
+    <h1>Lista de Clientes</h1>
+    <p>
+        <a th:href="@{/cliente/crear}"><button class="nuevo">Nuevo</button></a>
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Clave cliente</th>
+                <th>Nombre</th>
+                <th>Apellido materno</th>
+                <th>Apellido paterno</th>
+                <th>Calle numero</th>
+                <th>Colonia</th>
+                <th>Entidad</th>
+                <th>C.P</th>
+                <th>Telefono</th>
+                <th>Operaciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="cliente : ${clientes}">
+                <td th:text="${cliente.claveCliente}"></td>
+                <td th:text="${cliente.nombre}"></td>
+                <td th:text="${cliente.apellidoPaterno}"></td>
+                <td th:text="${cliente.apellidoMaterno}"></td>
+                <td th:text="${cliente.calleNumero}"></td>
+                <td th:text="${cliente.colonia}"></td>
+                <td th:text="${cliente.entidad}"></td>
+                <td th:text="${cliente.codigoPostal}"></td>
+                <td th:text="${cliente.telefono}"></td>
+                <td>
+                    <a th:href="@{/cliente/actualizar (claveCliente=${cliente.claveCliente})}"><button class="actualizar">Actualizar</button></a>
+                    <a th:href="@{/cliente/eliminar (claveCliente=${cliente.claveCliente})}"><button onclick="return confirm('Estas seguro que deseas eliminar este cliente?')" class="eliminar">Eliminar</button></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

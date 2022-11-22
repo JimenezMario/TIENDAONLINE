@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" th:href="@{/images/iconobom.png}">
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+    <title>Home | Dinamita | Online Store</title>
+</head>  
+
+<body>
+    <header th:insert="fragmentos/menuPrincipal :: menu-principal"></header>
+
+    <a th:href="@{/compras/realizarCompra}" class="btn-comprar" target="_BLANK"><button><b>$$COMPRAR$$</b></button></a>
+    <div class="seccion-articulo" th:each="producto : ${productos}">
+        <img th:src="@{/images/{img} (img=${producto.imagen})}" alt="imagen	">
+        <div class="info-articulo">
+            <h5>Codigo producto:</h5>
+            <p th:text="${producto.codigoProducto}"></p>
+            <h5>Nombre producto:</h5>
+            <p th:text="${producto.nombreProducto}"></p>
+            <h5>Descripcion:</h5>
+            <p th:text="${producto.descripcion}"></p>
+            <h5>Modelo:</h5>
+            <p th:text="${producto.modelo}"></p>
+            <h5>Talla:</h5>
+            <p th:text=${producto.talla}></p>
+            <h5>Precio producto:$</h5>
+            <p th:text="${producto.precio}"></p>
+            <h5>Color: </h5>
+            <p th:text="${producto.color}"></p>
+            <h5>Categoria:</h5>
+            <p th:text="${producto.claveCategoria.nombreCategoria}"></p><br><br>
+           
+            
+        </div>
+        
+    </div>
+   
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<header th:fragment="menu-principal">
+        <img th:src="@{/images/iconobom.png}" alt="Icono">
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/producto/listaProducto}">Productos</a>
+        <a th:href="@{/cliente/listaClientes}">Clientes</a>
+        <a th:href="@{/categoria/listaCategoria}">Categorias</a>
+        <a th:href="@{/entregas/listaEntregas}">Entregas</a>
+        <a th:href="@{/compras/listaCompras}">Compras</a>
+    </header>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/listaCompras.css}">
+    <link rel="shortcut icon" th:href="@{/images/iconobom.png}">
+    <title>Compras | Dinamita | Lista Compras</title>
+</head>
+<body>
+    <header th:insert="fragmentos/menuPrincipal :: menu-principal"></header>
+    <h1>Lista de Compras</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Folio compra</th>
+                <th>Cliente</th>
+                <th>Nombre producto</th>
+                <th>Cantidad</th>
+                <th>Fecha compra</th>
+                <th>Hora compra</th>
+                <th>Total compra</th>
+                <th>Operaciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="compra : ${compras}">
+                <td th:text="${compra.folioCompra}"></td>
+                <td th:text="${compra.claveCliente.claveCliente}"></td>
+                <td th:text="${compra.codigoProducto.nombreProducto}"></td>
+                <td th:text="${compra.cantidad}"></td>
+                <td th:text="${#dates.format(compra.fechaCompra, 'yyyy-MMM-dd')}"></td>
+                <td th:text="${compra.horaCompra}"></td>
+                <td th:text="'$ ' + ${compra.total}"></td>
+                <td>
+                    <a th:href="@{/compras/eliminar (folioCompra=${compra.folioCompra})}"><button onclick="confirm('Estas seguro que deseas eliminar esta Categoria?')" class="eliminar">Eliminar</button></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+</body>
+</html>

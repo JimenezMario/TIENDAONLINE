@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/Cliente.css}">
+    <link rel="shortcut icon" th:href="@{/images/iconobom.png}">
+    <title>Productos | Dinamita | Lista Productos</title>
+</head>
+<body>
+    <header th:insert="fragmentos/menuPrincipal :: menu-principal"></header>
+    <h1>Lista de Productos</h1>
+    <p>
+        <a th:href="@{/producto/crear}"><button class="nuevo">Nuevo</button></a>
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+            	<th>Codigo producto</th>
+                <th>Nombre producto</th>
+                <th>Descripcion</th>
+                <th>Modelo</th>
+                <th>Talla</th>
+                <th>Precio</th>
+                <th>Color</th>
+                <th>Categoria</th>
+                <th>Operaciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="producto : ${productos}">
+                <td th:text="${producto.codigoProducto}"></td>
+                <td th:text="${producto.nombreProducto}"></td>
+                <td th:text="${producto.descripcion}"></td>
+                <td th:text="${producto.modelo}"></td>
+                <td th:text="${producto.talla}"></td>
+                <td th:text="'$' + ${producto.precio}"></td>
+                <td th:text="${producto.color}"></td>
+                <td th:text="${producto.claveCategoria.nombreCategoria}"></td>
+                <td>
+                    <a th:href="@{/producto/actualizar (codigoProducto=${producto.codigoProducto})}"><button class="actualizar">Actualizar</button></a>
+                    <a th:href="@{/producto/eliminar (codigoProducto=${producto.codigoProducto})}"><button onclick="return confirm('Estas seguro que deseas eliminar esta Categoria?')" class="eliminar">Eliminar</button></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+</body>
+</html>

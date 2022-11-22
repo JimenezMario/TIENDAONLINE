@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" th:href="@{/images/iconobom.png}">
+<link rel="stylesheet" th:href="@{/css/CtrlProductos.css}">
+<title>Productos | Dinamita | Online Store</title>
+</head>
+<body>
+	<header th:insert="fragmentos/menuPrincipal :: menu-principal"></header>
+
+	<h1>FORMULARIO PRODUCTOS</h1>
+	<div class="formulario">
+		<form method="POST" th:action="@{/producto/guardar}"
+			th:object="${producto}">
+			<input type="hidden" th:field="*{codigoProducto}">
+			<p>
+				<label>Nombre del producto: </label> <input name="nombreProducto"
+					th:field="*{nombreProducto}" id="nombreProducto" type="text"
+					placeholder="Ingresa el nombre del producto: "><br>
+			</p>
+			<p>
+				<label>Descripción del producto: </label>
+
+				<textarea placeholder="Ingresa la descripcion del producto"
+					name="descripcion" th:field="*{descripcion}" id="descripcion"></textarea>
+				<br>
+			</p>
+			<p>
+				<label>Modelo del producto: </label> <input name="modelo"
+					th:field="*{modelo}" id="modelo" type="text"
+					placeholder="Ingresa el modelo del producto: ">
+			</p>
+			<p>
+				<label>Talla del producto: </label> <input name="talla" id="talla"
+					th:field="*{talla}" type="text"
+					placeholder="Ingresa la talla del producto: ">
+			</p>
+			<p>
+				<label>Precio del producto: </label> <input name="precio"
+					id="precio" type="number" th:field="*{precio}"
+					placeholder="Ingresa el precio del producto: "><br>
+			</p>
+			<p>
+				<label>Color del producto: </label> <input name="color" id="color"
+					type="text" th:field="*{color}"
+					placeholder="Ingresa el color del producto: ">
+			</p> 
+			<p>
+				<label>Imagen del producto: </label> <input name="imagen"
+					id="imagen" type="file" th:field="*{imagen}">
+			</p>
+			<br>
+			<p>
+				<label>Categoria: </label> <select name="claveCategoria"
+					id="claveCategoria" th:field="*{claveCategoria}">
+					<option value="1">Pantalones</option>
+					<option value="3">Chaquetas</option>
+					<option value="7">Vestidos</option>
+					<option value="12">Accesorios</option>
+					<option value="13">Tenis</option>
+					<option value="17">Zapatos</option>
+					<option value="18">Playeras</option>
+					<option value="19">Blusas</option>
+					 <option value="20">Sombreros</option>
+				</select>
+
+			</p>
+			<br>
+			<p>
+				<input class="guardarBtn" type="submit" value="Guardar">
+			</p>
+
+		</form>
+	</div>
+</body>
+</html>
